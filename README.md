@@ -10,6 +10,6 @@ Type in the console : `python learn.py True` (True for shuffeling the questions,
 
 **Run the analyze.py in the main directory** and it will go through all the subdirectories, process the study.csv and plot it. You will find the corresponding learning_progress.pdf in the same directory as the study.csv . Viewing your Learning Graph can help you to gain a better understanding of your learning progress. 
 
-<img src="img/idea.JPG">
+<img src="img/idea_.JPG">
 
 Note : This is a super simplistic implementation (which only took me about 3-4 hours). If you are looking for a great learning app / assistant then you would be well advised to search on the major app stores. For me, none of the learning apps provided what I was looking for (also I'm a little cheap, i didn't want to pay anyone anything), so I came up with my own solution that I will continue to develop / improve. On the other side, the simplicity of this implementation allows you to just grab it and adjust it to **YOUR** needs and add data that **YOU** are interested in. 
