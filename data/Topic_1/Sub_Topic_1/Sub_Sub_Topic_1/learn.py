@@ -6,10 +6,15 @@ import pathlib
 import json
 import os
 import time
+import random
+import sys
 
-current_date = f"{time.localtime().tm_year}-{time.localtime().tm_mon}-{time.localtime().tm_mday + 2}"
+current_date = f"{time.localtime().tm_year}-{time.localtime().tm_mon}-{time.localtime().tm_mday}"
 
-SHUFFLE = True
+try:
+    SHUFFLE = sys.argv[1]
+except:
+    SHUFFLE = "False"
 
 path = pathlib.Path(__file__).parent.absolute()
 path_study_file = str(path) + "/study.csv"
@@ -29,8 +34,8 @@ def read_csv(path):
 
 def learning(questions, SHUFFLE, current_date):
     
-    if SHUFFLE == True:
-        print("shuffle was true")
+    if SHUFFLE == "True":
+        random.shuffle(questions)
     
     for idx, question in enumerate(questions):
         os.system('cls' if os.name == 'nt' else 'clear') # clears the console
@@ -38,7 +43,7 @@ def learning(questions, SHUFFLE, current_date):
         result = input("Did you get it right? (t/f) : ")
         question[current_date] = result
 
-    return questions
+    return sorted(questions, key=lambda k: k["id"])
 
 def write_new_file(path, questions):
     with open (path, "w", newline="") as file:
